@@ -109,11 +109,11 @@ Ponownie zmierzyliśmy długość wahadła,następnie wychyliliśmy wahadło o~n
 \end{tabular}
 \end{center}
 \end{table}
-\begin{wrapfigure}[20]{r}{0.5\textwidth}
+\begin{wrapfigure}[21]{r}{0.5\textwidth}
  \centering
-  \caption{Wykres zależności okresu od długości wahadła $T(l)$}
- \includegraphics[width=0.5\textwidth,keepaspectratio=true]{WykresTodl.pdf}
+ \includegraphics[width=0.5\textwidth,keepaspectratio=true]{wykresTodl.pdf}
  \label{fig:w2}
+   \caption{Wykres zależności okresu od długości wahadła $T(l)$}
 \end{wrapfigure}
 
 \pagebreak
@@ -141,17 +141,20 @@ Do tego celu wykorzystamy następujący wzór:
 \subsection{Obliczanie niepewności złożonej i rozszerzonej przyspieszenia ziemskiego}
 Do obliczenia niepewności złożonej $u_c(g)$ wykorzystamy prawo przenoszenia niepewności.
 Dla naszego równania ma ono formę:
-\[\frac{u_c(g)}{g} = \sqrt{ \left[\frac{l}{g}\frac{\partial g}{\partial l}\frac{u(l)}{l}\right]^2+ \left[\frac{T}{g}\frac{\partial g}{\partial T}\frac{u(T)}{T}\right]^2 }
-\]
-\[\frac{l}{g}\frac{\partial g}{\partial l} = \frac{l}{\frac{4\pi^2 l}{T^2}}\cdot\frac{4\pi^2}{T^2} = \frac{l}{l}=1\]
-\[\frac{T}{g}\frac{\partial g}{\partial T} = \frac{T}{\frac{4\pi^2 l}{T^2}}\cdot-2(4\pi^2l)T^{-3}=-2\]
-\[\frac{u_c(g)}{g} = \sqrt{ \left[\frac{u(l)}{l}\right]^2+ \left[-2\frac{u(T)}{T}\right]^2 }\]
-\[\frac{u_c(g)}{g} = \sqrt{ \left[\frac{5}{375}\right]^2+ 4\left[\frac{0.0072}{1.24}\right]^2 } = 0.018\]
+\begin{equation*}
+\begin{split}
+\frac{u_c(g)}{g} = \sqrt{ \left[\frac{l}{g}\frac{\partial g}{\partial l}\frac{u(l)}{l}\right]^2+ \left[\frac{T}{g}\frac{\partial g}{\partial T}\frac{u(T)}{T}\right]^2 }\\
+\frac{l}{g}\frac{\partial g}{\partial l} = \frac{l}{\frac{4\pi^2 l}{T^2}}\cdot\frac{4\pi^2}{T^2} = \frac{l}{l}=1\\
+\frac{T}{g}\frac{\partial g}{\partial T} = \frac{T}{\frac{4\pi^2 l}{T^2}}\cdot-2(4\pi^2l)T^{-3}=-2\\
+\frac{u_c(g)}{g} = \sqrt{ \left[\frac{u(l)}{l}\right]^2+ \left[-2\frac{u(T)}{T}\right]^2 }\\
+\frac{u_c(g)}{g} = \sqrt{ \left[\frac{5}{375}\right]^2+ 4\left[\frac{0.0072}{1.24}\right]^2 } = 0.018\\
+\end{split}
+\end{equation*}
 Co pozwala nam na wyliczenie niepweności złożonej:
 \[u_c(g) = 0.17 \left[\frac{m}{s^2}\right] \]
 oraz niepewności rozszerzonej:
 \[U(g) =k u_c(g) =2 \cdot 0.17 = 0.34\left[\frac{m}{s^2}\right] \]
-Wyliczona przez nas wartość $g=9.63 \frac{m}{s^2} $ jest zgodna w granicach niepewnośći rozszerzonej z wartością tabelaryczną ($ g_t = 9.811 \frac{m}{s^2}$).
+Wyliczona przez nas wartość $g=(9.63\pm0.34) \frac{m}{s^2} $ jest zgodna w granicach niepewnośći rozszerzonej z wartością tabelaryczną ($ g_t = 9.811 \frac{m}{s^2}$).
 \pagebreak
 \subsection{Wykonanie wykresu zależności $T^2$ w funkcji $l$}
 W celu wykonania zlinearyzowanego wykresu  $T^2(l)$ posłużyliśmy się poprzednio zebranymi pomiarami długości linki, a wartości odpowiadających im okresów obliczyliśmy z następującego wzoru podniesionego do kwadratu:
@@ -161,8 +164,8 @@ W celu wykonania zlinearyzowanego wykresu  $T^2(l)$ posłużyliśmy się poprzed
 Zależności między wyliczonymi wartościami przedstawia wykres \figurename{\ref{fig:w3}}
 \begin{figure}[htbp]
  \centering
-  \caption{Zlinearyzowany wykres zależności wartości okresu podniesionej do kwadratu od długości wahadła $T^2(l)$}
  \includegraphics[width=0.8\textwidth,keepaspectratio=true]{wykres2.pdf}
+   \caption{Zlinearyzowany wykres zależności wartości okresu podniesionej do kwadratu od długości wahadła $T^2(l)$}
  \label{fig:w3}
 \end{figure}
 \pagebreak
@@ -170,27 +173,36 @@ Zależności między wyliczonymi wartościami przedstawia wykres \figurename{\re
 W pierwszej kolejności do naszych punktów doświadczalnych dobraliśmy prostą typu y = ax, czyli przechodzącą przez początek
 układu współrzędnych. Skorzystaliśmy w tym celu z metody najmniejszych kwadratów.
 %Za pomocą wykresu \figurename{\ref{fig:w3}} obliczyliśmy  wartość $g$.
-\[ a = \frac{\sum{l_i \cdot T_i^2}}{\sum{l_i^2}}=4.06\]
+\[ a = \frac{\sum{l_i \cdot T_i^2}}{\sum{l_i^2}}=4.064\]
 W wyniku czego otrzymaliśmy prostą przedstawioną na wykresie~ \figurename{\ref{fig:w4}}
 %TUTAJ
 \begin{figure}[htbp]
  \centering
-  \caption{Wykres prostej typu $y = ax$ dopasowanej do punktów doświadczalnych}
- \includegraphics[width=0.5\textwidth,keepaspectratio=true]{wykres3.pdf}
+ \includegraphics[width=0.45\textwidth,keepaspectratio=true]{wykres4.pdf}
+   \caption{Wykres prostej typu $y = ax$ dopasowanej do punktów doświadczalnych}
  \label{fig:w4}
 \end{figure}
 %
 \\
 Następnie przy pomocy $a$~wyznaczyliśmy~wartość~$g$.
-\[T^2=a \cdot l\]
-\[g=\frac{4\pi^2l}{T^2}=\frac{4\pi^2l}{a\cdot l}=\frac{4\pi^2}{a}=9.71\]
+ \begin{equation*}
+    \begin{split}
+        T^2=a \cdot l\\
+        g=\frac{4\pi^2l}{T^2}=\frac{4\pi^2l}{a\cdot l}=\frac{4\pi^2}{a}=9.714
+    \end{split}
+\end{equation*}
 Po wyliczeniu wartości $a$ i $g$ przeszliśmy do wyliczenia niepewności $u(a)$:
-\[u(a)=\sqrt{\frac{\sum{[T^2_i-al_i]^2}}{9\sum{l_i^2}}}=0.03\]
+\[u(a)=\sqrt{\frac{\sum{[T^2_i-al_i]^2}}{9\sum{l_i^2}}}=0.026\]
  następnie wykorzystaliśmy ją do obliczenia $u(g)$ i $U(g)$:
-\[u(g) = \left| \frac{\partial g}{\partial a}u(a)\right|=\left| \frac{-4\pi^2}{a^2}u(a)\right|=0.07\]
-\[U(g)=2u(g)=0.14\]
-Wyznaczona wartość $g$ nie pokrywa się z wartością tabelaryczną $g_t$ w granicch niepewności standardowej $|g-g_t|>u(g)$. Natomiast znajduje się w granicach niepewności rozszerzonej $|g-g_t|<U(g)$.
+ \begin{equation*}
+    \begin{split}
+     u(g) = \left| \frac{\partial g}{\partial a}u(a)\right|=\left| \frac{-4\pi^2}{a^2}u(a)\right|=0.064\\
+     U(g)=2u(g)=0.128
+    \end{split}
+\end{equation*}
 
+Wyznaczona wartość $g$ nie pokrywa się z wartością tabelaryczną $g_t$ w granicach niepewności standardowej $|g-g_t|>u(g)$. Natomiast znajduje się w granicach niepewności rozszerzonej $|g-g_t|<U(g)$.
+\[ g=(9.714\pm0.128)\frac{\text{m}}{\text{s}^2}\] %% <- trzeba jeszcze objać nawiasem ( ) i za nim dopisać jednostkę
 \section{Podsumowanie}
 Wyliczone za pomocą obu prezentowanych metod wartości $g$ (przyspieszenia ziemskiego) zgadzają się z wartościami tabelarycznymi dla tego parametru. Różnica między wynikami obliczeń dokonanych obiemia metodami nie jest znacząca, co jest spowodowane stosunkowo niewielką liczbą pomiarów i brakiem błędów grubych.
 Zarówno pierwsza jak i druga metoda dobrze przybliżają faktczną wartość przyspieszenia ziemskiego $g$.
