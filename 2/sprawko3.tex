@@ -1,0 +1,260 @@
+\documentclass{fizraport}
+\authorA{Krzysztof Stasiowski}
+\authorB{Joanna Binek}
+\team{2}{2a}{1}
+
+\topic{Moduł Younga}{11}{
+Wyznaczenie  modułu  Younga metodą statyczną
+za pomocą pomiaru wydłużenia drutu 
+z~badanego metalu obciążonego stałą siłą. }
+\carryOutDate{17.10.2018 r.}
+\ftHandInDate{24.10.2018 r.}
+\usepackage{csvsimple}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\begin{document}
+
+\maketitle
+\section{Wstęp teoretyczny}
+\subsection{Moduł Younga}
+Kiedy opisujemy zachowanie się ciała pod wpływem sił zazwyczaj posługujemy się
+wyidealizowanym pojęciem bryły sztywnej, którego podstawowym założeniem jest
+zachowanie względnych położeń poszczególnych części danego obiektu. W~wypadku gdy
+potrzebujemy większej dokładności, lub gdy interesują nas odkształcenia danej bryły, możemy
+zastosować prawo Hooke’a.
+
+Prawo Hooke’a zakłada liniową zależność pomiędzy siłą jaka działa na~ciało a~jej
+odkształceniem oraz, że~odkształcenie ciała w~wyniku siły następuje natychmiastowo i~
+zatrzymuje się gdy siła przestaje oddziaływać na obiekt. Jest więc to~odkształcenie plastyczne
+w~przeciwieństwie do~odkształcenia sprężystego w~którym ciało zmienia kształt po~usunięciu
+siły rozciągającej. Warto zwrócić uwagę, że~prawo Hooke’a nie~bierze pod uwagę
+wewnętrznej budowy ciała i~jest doświadczalną aproksymacją rzeczywistego nieliniowego
+zjawiska przedstawionego na wykresie (\figref{fig:hook}).
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.45]{wstep.png}
+	\caption{Zależność obciążenia i~naprężenia od odkształceń dla stali z~zaznaczonym zakresem stosowalności prawa Hooke’a, źródło:  \url{http://www.wikipedia.pl}}
+	\label{fig:hook}
+\end{figure}
+\pagebreak
+Można więc je stosować tylko dla ciał o~niewielkiej plastyczności oraz lepkości, przy niewielkich siłach. Prawo~Hooke’a posiada
+postać uogólnioną w~trójwymiarowej przestrzeni, ale w~tym doświadczeniu wektor
+odkształcenia jest równoległy do~wektora siły więc zjawisko będziemy rozpatrywać
+jednowymiarowo. W~takim wypadku prawo~Hooke’a dla pręta przyjmuje postać (\ref{eq:1}):
+
+\begin{align}
+    \Delta l = \frac{F \cdot l}{E \cdot S}
+    \label{eq:1}
+\end{align}
+
+Gdzie $\Delta l$ jest zmianą długości pręta, $F$ przyłożoną siłą, $E$ to~moduł Younga,
+charakterystyczny dla danego materiału, a~$S$ to pole przekroju poprzecznego. Prawo można
+przedstawić też jako (\ref{eq:2}):
+
+\begin{align}
+    \sigma = E \cdot \varepsilon
+    \label{eq:2}
+\end{align}
+
+Gdzie $ \sigma = \frac{F}{S}$ \si{[Pa]} i~oznacza naprężenie normalne; oraz $\varepsilon = \frac{\Delta l}{l} $ , czyli
+normalne (prostopadłe do~przekroju poprzecznego ciała) odkształcenie względne.
+
+Moduł Younga można interpretować jako naprężenie przy~którym długość ciała zostaje podwojona.
+W~wypadku rzeczywistych materiałów prawo Hooke’a przestaje działać przy dużo mniejszych odkształceniach. Jednostką modułu Younga jest paskal $\si{[\frac{N}{m^2}]}$.
+
+
+\section{Układ pomiarowy}
+\begin{enumerate}
+    \item Przyrząd do pomiaru wydłużenia drutu pod wpływem stałej siły (\figref{fig:uklad}), zaopatrzony w czujnik mikrometryczny do pomiaru wydłużenia drutu.
+    \item Zestaw odważników
+    \item Śruba mikrometryczna
+    \item Przymiar milimetrowy
+\end{enumerate}
+\addplot[h]{urządzenie do~pomiaru modułu~Younga metodą~statyczną}{uklad}{uklad.png}{0.30\linewidth}
+
+%\pagebreak
+%\input{2/inne/zadania.tex}
+\pagebreak
+\section{Opis}
+
+\subsection{Wykonanie ćwiczenia}
+Wykonanie ćwiczenia rozpoczęliśmy od~zmierzenia długości drutu stalowego za~pomocą miarki o~niepewności pomiarowej 1mm.
+
+Następnie zamocowaliśmy drut stalowy w~statywie za pomocą nakrętek. Po obciążeniu szalki dwoma odważnikami
+kilogramowymi, zmierzyliśmy za pomocą śruby mikrometrycznej (o~niepewności pomiarowej 0.01 mm) średnicę drutu w~trzech różnych miejscach rozłożonych na całej jego długości.
+
+Opróżniliśmy szalkę z~odważników, wyregulowaliśmy zamocowanie drutu tak, aby belka C dotykała końcówki czujnika mikrometrycznego (\figref{fig:uklad}) i~wyzerowaliśmy wskazania czujnika mikrometrycznego.
+
+Po upewnieniu się, że czujnik mikrometryczny reaguje oraz wraca w położenie zerowe, przystąpiliśmy do serii pomiarów:
+obciążaliśmy szalkę dokładając kolejne odważniki i~notując przy tym o~ile wydłuża się stalowy pręt.
+
+Wykonaliśmy również czynności odwrotne~-~po~nałożeniu odważników o~maksymalnej wadze dla stalowego pręta zaczęliśmy je kolejno ściągać i~notować za każdym razem wskazanie czujnika. Wszystkie pomiary zapisaliśmy w~tabeli \tabref{tab:stal}
+
+Analogiczną serię wykonaliśmy dla drutu mosiężnego i~pomiary zapisaliśmy w~\tabref{tab:mosiadz}.
+
+\newlength{\colW}
+\setlength{\colW}{2.2cm}
+\begin{table}[thb]
+\centering
+\begin{flushleft}
+Rodzaj materiału: stal\\
+Długość drutu: $l$=1060 mm,~$u(l)$= 1 mm\\
+Średnica drutu $d$: 0.29 mm,~0.28 mm,~0.29 mm\\
+Średnica drutu średnia: $\Bar{d}=$ 0.29 mm,~$u(\Bar{d})=$ 0.01 mm\\
+Współczynnik nachylenia wykresu:
+$a_{stal}=0.01783$,~$u(a_{stal})=0.00054$\\
+\end{flushleft}
+\caption{Wyniki pomiaru drutu stalowego:}
+\label{tab:stal}
+
+\begin{tabular}{|r|r|r|r|r|}
+    \hline
+    \multirow[b]{4}{\colW}{ Masa odważników \\$[kg]$} & 
+    \multirow[b]{4}{0.50\colW}{ Siła \\$[N]$} &
+    \multirow[b]{4}{0.7\colW}{Wskazanie czujnika  $\uparrow $\\$[mm]$} &
+    \multirow[b]{4}{0.7\colW}{Wskazanie czujnika  $\downarrow $\\$[mm]$} &
+    \multirow[b]{4}{0.8\colW}{Średnie wydłużenie $\Delta l $\\$[mm]$}\\
+    &&&&\\
+    &&&&\\
+    &&&&
+    \csvreader[separator=semicolon, head to column names,]{tab2/tabelkaDlaStali.csv}{}
+    {\\\hline \mass & \F & \up & \down & \mean}
+    \\\hline
+\end{tabular}
+\end{table}
+\begin{table}[thb]
+\centering
+\begin{flushleft}
+Rodzaj materiału: mosiądz\\
+Długość drutu: $l$=1610 mm,~ $u(l)$= 1 mm\\
+Średnica drutu $d$: 1.19 mm,~1.19 mm,~1.19 mm\\
+Średnica drutu średnia: $\Bar{d}=$ 1.19 mm,~ $u(\Bar{d})=$ 0.01 mm\\
+Współczynnik nachylenia wykresu: $a_{mosiadz}=0.01979$,~$u(a_{mosiadz})=0.00085$\\
+\end{flushleft}
+\caption{Wyniki pomiaru drutu mosiężnego:}
+\label{tab:mosiadz}
+
+\begin{tabular}{|r|r|r|r|r|}
+    \hline
+    \multirow[b]{4}{\colW}{ Masa odważników \\$[kg]$} & 
+    \multirow[b]{4}{0.50\colW}{ Siła \\$[N]$} &
+    \multirow[b]{4}{0.7\colW}{Wskazanie czujnika  $\uparrow $\\$[mm]$} &
+    \multirow[b]{4}{0.7\colW}{Wskazanie czujnika  $\downarrow $\\$[mm]$} &
+    \multirow[b]{4}{0.8\colW}{Średnie wydłużenie $\Delta l $\\$[mm]$}\\
+    &&&&\\
+    &&&&\\
+    &&&&
+    \csvreader[separator=semicolon, head to column names,]{tab2/tabelkaMosiadz.csv}{}
+    {\\\hline \mass & \F & \up & \down & \mean}
+    \\\hline
+\end{tabular}
+\end{table}
+\newpage
+\section{Opracowanie wyników}
+\subsection{Drut stalowy}
+\begin{enumerate}
+    \item Przedstawiliśmy na wykresie (\figref{fig:w1}) zależność średniego wydłużenia $\Delta l$ w~funkcji przyłożonej siły rozciągającej $F$, gdzie kolorem czerwonym zaznaczone są punkty które w~naszej ocenie odbiegają od prostoliniowego
+przebiegu, a~niebieskim te punkty które braliśmy pod uwagę dopasowując do nich prostą metodą najmniejszych kwadratów. Wykorzystaliśmy do tego oprogramowanie komputerowe i~otrzymaliśmy prostą o~współczynniku nachylenia $a_{stal}=$\SI{0.01783}{\milli\metre\per\newton} z~niepewnością, $u(a_{stal})=\SI{0.00054}{\milli\metre\per\newton}$.
+\addplot[c]{Wykres zależności średniego wydłużenia $\Delta l$ w~funkcji przyłożonej siły rozciągającej $F$}{w1}{Stal.pdf}{0.8\textwidth}
+
+\item 
+Wyliczony współczynnik nachylenia $a$ wykorzystaliśmy do~obliczenia modułu~Younga($E$) ze wzoru roboczego:(\ref{eq:young})
+\begin{equation}
+\label{eq:young}
+    E = \frac{4l}{\pi d^2 a}
+\end{equation}
+\begin{equation*}
+    E_{stal} = \frac{4l_{stal}}{\pi d_{stal}^2 a_{stal}}= \SI{899.93}{GPa} 
+\end{equation*} %45,48 0329243
+
+\item Z~kolei wyliczyliśmy niepewność modułu Younga $u(E)$ korzystając z~prawa przenoszenia
+niepewności względnych ze wzoru dla trzech zmiennych:
+\begin{equation*}
+\footnotesize
+\begin{split}
+    u(E)&=\sqrt{\left (\frac{\partial E}{\partial a}*u(a)\right )^2+\left (\frac{\partial E}{\partial l}*u(l)\right )^2+\left (\frac{\partial E}{\partial d}*u(d)\right )^2}=\\
+&=\sqrt{\left(\frac{-4*l}{a^2*\pi *d^2}*u(a)\right)^2+\left(\frac{4}{a*\pi *d^2}*u(l)\right)^2+\left(\frac{-8l}{a*\pi *d^3}*u(d)\right)^2}=\\
+&= \sqrt{E^2\left (\frac{-u(a)}{a} \right )^2 + E^2\left (\frac{u(l)}{l} \right )^2 + E^2\left (\frac{-2*u(d)}{d} \right )^2}=\\
+&= E\sqrt{\left (\frac{-u(a)}{a} \right )^2 + \left (\frac{u(l)}{l} \right )^2 + \left (\frac{-2*u(d)}{d} \right )^2} \\
+\\
+u_c(E) &= \SI{51.48} {GPa} 
+\end{split}
+\end{equation*}
+
+\item Wyznaczyliśmy również niepewność rozszerzoną $U(E)$:
+\begin{align*}
+        U(E) &= k \cdot u_c(E) \\
+        U(E) &= 2 \cdot  \SI{51.48}{GPa}  =  \SI{102.96}{GPa} 
+\end{align*}
+\end{enumerate}
+
+\newpage
+\subsection{Drut mosiężny}
+\begin{enumerate}
+    \item Przedstawiliśmy na wykresie(\figref{fig:w2}) zależność średniego wydłużenia $\Delta l$ w~funkcji przyłożonej siły rozciągającej $F$, gdzie kolorem czerwonym zaznaczone są punkty które w~naszej ocenie odbiegają od prostoliniowego
+przebiegu, a~niebieskim te punkty które braliśmy pod uwagę dopasowując do nich prostą metodą najmniejszych kwadratów. Wykorzystaliśmy do tego oprogramowanie komputerowe i~otrzymaliśmy prostą o~współczynniku nachylenia $a_{mosiadz}=\SI{0.01979}{\milli\metre\per\newton}$ z~niepewnością, $u(a_{mosiadz})=\SI{0.00085}{\milli\metre\per\newton}$.
+\addplot[c]{Wykres zależności średniego wydłużenia  $\Delta l$ w~funkcji przyłożonej siły rozciągającej $F$}{w2}{Mosiadz.pdf}{0.8\textwidth}
+
+\item 
+Wyliczony współczynnik nachylenia $a$ wykorzystaliśmy do~obliczenia modułu~Younga($E$) ze wzoru roboczego:(\ref{eq:young})
+\begin{equation*}
+    E = \frac{4l}{\pi d^2 a}
+\end{equation*}
+\begin{equation*}
+    E_{mosiadz} = \frac{4l_{mosiadz}}{\pi d_{mosiadz}^2 a_{mosiadz}}=\SI{73.150}{\giga\pascal}
+\end{equation*}
+
+\item Z~kolei wyliczyliśmy niepewność modułu Younga $u(E)$ korzystając z~prawa przenoszenia
+niepewności względnych ze wzoru dla trzech zmiennych:
+\begin{equation*}
+\footnotesize
+\begin{split}
+    u(E)&=\sqrt{\left (\frac{\partial E}{\partial a}*u(a)\right )^2+\left (\frac{\partial E}{\partial l}*u(l)\right )^2+\left (\frac{\partial E}{\partial d}*u(d)\right )^2}=\\
+&=\sqrt{\left(\frac{-4*l}{a^2*\pi *d^2}*u(a)\right)^2+\left(\frac{4}{a*\pi *d^2}*u(l)\right)^2+\left(\frac{-8l}{a*\pi *d^3}*u(d)\right)^2}=\\
+&= \sqrt{E^2\left (\frac{-u(a)}{a} \right )^2 + E^2\left (\frac{u(l)}{l} \right )^2 + E^2\left (\frac{-2*u(d)}{d} \right )^2}=\\
+&= E\sqrt{\left (\frac{-u(a)}{a} \right )^2 + \left (\frac{u(l)}{l} \right )^2 + \left (\frac{-2*u(d)}{d} \right )^2} \\
+\\
+u_c(E) &=  \SI{3.34}{\giga\pascal}
+\end{split}
+\end{equation*}
+
+\item Wyznaczyliśmy również niepewność rozszerzoną $U(E)$:
+\begin{align*}
+        U(E) &= k \cdot u_c(E) \\
+        U(E) &= 2 \cdot 3.34 = \SI{6.68}{\giga\pascal}
+\end{align*}
+\end{enumerate}
+
+\pagebreak
+\section{Porównanie wyników}
+\begin{table}[htb]
+\centering
+\caption{Porównanie wyników z~wartościami tablicowymi} \label{tab:endTable}
+\newlength{\CW}
+\setlength{\CW}{3.7cm}
+\begin{tabular}{|c|c|c|c|}
+\hline
+  \multirow{3}{*}{Materiał} &
+  \multirow{3}{\CW}{Moduł Younga $E$ - Wzór roboczy(\ref{eq:young})\\ $\si{[\giga\pascal]}$}&
+  \multirow{3}{\CW}{Niepewność rozszerzona\\ $U(E)$\\ $\si{[\giga\pascal]}$ }&
+  \multirow{3}{\CW}{Moduł Younga $E$ - Wartość tablicowa\\$\si{[\giga\pascal]}$ } \\&&&\\&&&\\ \hline
+  
+Stal    & 899.93 & 102.96  & 210-220 \\ \hline
+Mosiądz & 73.15 & 6.68 & 90-110 \\\hline
+
+\end{tabular}
+\end{table}
+
+
+\section{Wnioski}
+Wyliczone przez nas wartości modułu Younga  nie są w~granicach niepewności rozszerzonej zgodne z~wartościami~tablicowymi.
+Biorąc pod uwagę wartości uzyskane podczas pomiarów  w~\tabref{tab:mosiadz}~i~\tabref{tab:stal}, przyczynami tak dużej rozbieżności między obliczonymi przez nas wynikami, a~wartościami oczekiwanymi mogą być:
+\begin{itemize}
+    \item fakt, że druty po zamocowaniu w urządzeniu były jeszcze krzywe, co sprawiało, że część pracy ciężaru została spożytkowana na ich wyprostowanie
+    \item niebezpośrednie obciążenie drutów
+    \item ogólny stan drutów, ich pozaginanie i~wiek
+\end{itemize}
+
+
+\end{document}

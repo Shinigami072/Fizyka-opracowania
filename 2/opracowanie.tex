@@ -1,0 +1,97 @@
+\section{Opracowanie wyników}
+Wykorzystując dane z~obu tabel sporządziliśmy \figref{fig:w1} i \figref{fig:w2}, gdzie symbolami zaznaczyliśmy te punkty, które w~naszej ocenie odbiegają od prostoliniowego
+przebiegu. 
+\subsection{Wyliczenie modułu Younga}
+Następnie korzystając z~metody najmniejszych kwadratów z wykorzystaniem oprogramowania komputerowego otrzymaliśmy proste o~współczynnikach nachylenia $a_{stal}=0.01783253$,$a_{mosiadz}=0.0197891397$ z~niepewnościami  $u(a_{stal})=0.00053340$,$u(a_{mosiadz})=0.0008412996$.\\
+I~wykorzystaliśmy je do~obliczenie modułu~Younga($E$) wykorzystując wzór roboczy(\ref{eq:young})
+\begin{equation}
+\label{eq:young}
+    E = \frac{4l}{\pi d^2 a}
+\end{equation}
+\begin{equation*}
+    E_{stal} = \frac{4l_{stal}}{\pi d_{stal}^2 a_{stal}}=\frac{}{}=value
+\end{equation*}
+\begin{equation*}
+    E_{mosiadz} = \frac{4l_{mosiadz}}{\pi d_{mosiadz}^2 a_{mosiadz}}=\frac{}{}=value
+\end{equation*}
+\subsection{Wyliczenie niepewności modułu~Younga}
+Z kolei wyliczyliśmy niepewność Modułu Younga $u(E)$ korzystając z prawa przenoszenia
+niepewności względnych ze wzoru dla trzech zmiennych
+\begin{equation*}
+\begin{split}
+    u(E)&=\sqrt{\left (\frac{\partial E}{\partial a}*u(a)\right )^2+\left (\frac{\partial E}{\partial l}*u(l)\right )^2+\left (\frac{\partial E}{\partial d}*u(d)\right )^2}=\\
+&=\sqrt{\left(\frac{-4*l}{a^2*\pi *d^2}*u(a)\right)^2+\left(\frac{4}{a*\pi *d^2}*u(l)\right)^2+\left(\frac{-8l}{a*\pi *d^3}*u(d)\right)^2}=\\
+&= \sqrt{E^2\left (\frac{-u(a)}{a} \right )^2 + E^2\left (\frac{u(l)}{l} \right )^2 + E^2\left (\frac{-2*u(d)}{d} \right )^2}=\\
+&= E\sqrt{\left (\frac{-u(a)}{a} \right )^2 + \left (\frac{u(l)}{l} \right )^2 + \left (\frac{-2*u(d)}{d} \right )^2} \\
+\\
+u_c(E) &= ???
+\end{split}
+\end{equation*}
+       
+    
+Wyznaczyliśmy również niepewność rozszerzoną $U(E)$:
+\begin{align*}
+        U(E) &= k \cdot u_c(E) \\
+        U(E) &= 2 \cdot ?? = ??
+\end{align*}
+%todać gdzieś niżej XD
+
+\subsection{Porównanie wyliczonej wartości Modułu Younga z wartością tablicową dla (wstawi materiał)}
+Na podstawie powyższych wyliczeń można stwierdzić, że uzyskana wartość Modułu Younga dla (materiał)  zgadza się/nie zgadza się w granicach
+niepewności rozszerzonej z wartością tablicową, która wynosi ... .
+\newlength{\colW}
+\setlength{\colW}{2.2cm}
+\begin{table}[hb]
+\centering
+\caption{Wyniki Pomiaru drutu stalowego:}
+\label{tab:stal}
+\begin{flushleft}
+Rodzaj materiału: Stal\\
+Długość drutu: $l$=1060 mm,~$u(l)$= 1 mm\\
+Średnica drutu $d$: 1.29 mm,~1.28 mm,~1.29 mm\\
+Średnica drutu średnia: $\Bar{d}=$ 1.29 mm,~$u(\Bar{d})=$ 0.01 mm\\
+Współczynnik nachylenia wykresu: $a_{stal}=0.01783253$,~$u(a_{stal})=0.00053340$\\
+\end{flushleft}
+\begin{tabular}{|r|r|r|r|r|}
+    \hline
+    \multirow[b]{3}{\colW}{ Masa odważników \\$[kg]$} & 
+    \multirow[b]{3}{0.50\colW}{ Siła \\$[N]$} &
+    \multirow[b]{3}{0.7\colW}{Wskazanie czujnika  $\uparrow $\\$[mm]$} &
+    \multirow[b]{3}{0.7\colW}{Wskazanie czujnika  $\downarrow $\\$mm]$} &
+    \multirow[b]{3}{0.5\colW}{Średnie $\Delta l $\\$[mm]$}\\
+    &&&&\\
+    &&&&
+    \csvreader[separator=semicolon, head to column names,]{tab2/tabelkaDlaStali.csv}{}
+    {\\\hline \mass & \F & \up & \down & \mean}
+    \\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[hb]
+\centering
+\caption{Wyniki Pomiaru drutu mosiężnego:}
+\label{tab:mosiadz}
+\begin{flushleft}
+Rodzaj materiału: Mosiądz\\
+Długość drutu: $l$=1610 mm,~ $u(l)$= 1 mm\\
+Średnica drutu $d$: 1.19 mm,~1.19 mm,~1.19 mm\\
+Średnica drutu średnia: $\Bar{d}=$ 1.19 mm,~ $u(\Bar{d})=$ 0.01 mm\\
+Współczynnik nachylenia wykresu: $a_{mosiadz}=0.0197891397$,~$u(a_{mosiadz})=0.0008412996$\\
+\end{flushleft}
+\begin{tabular}{|r|r|r|r|r|}
+    \hline
+    \multirow[b]{3}{\colW}{ Masa odważników \\$[kg]$} & 
+    \multirow[b]{3}{0.50\colW}{ Siła \\$[N]$} &
+    \multirow[b]{3}{0.7\colW}{Wskazanie czujnika  $\uparrow $\\$[mm]$} &
+    \multirow[b]{3}{0.7\colW}{Wskazanie czujnika  $\downarrow $\\$[mm]$} &
+    \multirow[b]{3}{0.5\colW}{Średnie $\Delta l $\\$[mm]$}\\
+    &&&&\\
+    &&&&
+    \csvreader[separator=semicolon, head to column names,]{tab2/tabelkaMosiadz.csv}{}
+    {\\\hline \mass & \F & \up & \down & \mean}
+    \\\hline
+\end{tabular}
+\end{table}
+
+
+

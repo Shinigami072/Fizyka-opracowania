@@ -28,6 +28,7 @@
 \RequirePackage[polish]{babel}
 \RequirePackage[T1,plmath]{polski}
 \RequirePackage{multirow}
+\RequirePackage{tikz}
 \selectlanguage{polish}
 \brokenpenalty=1000
 \clubpenalty=1000
@@ -45,6 +46,9 @@
 \RequirePackage{xcolor}
 \RequirePackage{amsmath}
 \RequirePackage{enumerate}
+\RequirePackage{siunitx}
+\RequirePackage{csvsimple}
+
 
 %roman numerals
 \newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
@@ -165,6 +169,14 @@
             \caption{#2}
             \label{fig:#3}
     \end{figure}
+    \else
+    \ifx h#1 
+    \begin{figure}[h]
+            \centering
+            \includegraphics[width=#5,keepaspectratio=true]{#4}
+            \caption{#2}
+            \label{fig:#3}
+    \end{figure}
     
     \else
     \ifx r#1 
@@ -188,7 +200,7 @@
     \else
         \message{LaTeX Warning: \noexpand\addplot #1 is not l,c,r  \the\inputlineno}
         
-    \fi\fi\fi
+    \fi\fi\fi\fi
 }
 %\uncertain[en]{val}{uncertain}
 \newcommand{\uncertain}[3][n]{
