@@ -48,6 +48,7 @@
 \RequirePackage{enumerate}
 \RequirePackage{siunitx}
 \RequirePackage{csvsimple}
+\RequirePackage{hyperref}
 
 
 %roman numerals

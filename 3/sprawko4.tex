@@ -3,13 +3,215 @@
 \authorB{Joanna Binek}
 \team{2}{2a}{1}
 
-\topic{Moduł Younga}{11}{
-Wyznaczenie  modułu  Younga metodą statyczną
-za pomocą pomiaru wydłużenia drutu 
-z~badanego metalu obciążonego stałą siłą. }
-\carryOutDate{17.10.2018 r.}
-\ftHandInDate{24.10.2018 r.}
-\usepackage{hyperref}
+\topic{Fale podłużne w~ciałach stałych}{29}{
+Wyznaczenie modułu Younga dla różnych materiałów na podstawie pomiaru prędkości rozchodzenia się fali dźwiękowej w~pręcie. }
+\carryOutDate{24.10.2018 r.}
+\ftHandInDate{31.10.2018 r.}
 \begin{document}
-\input{3/inne/name.tex}
+\maketitle
+
+\section{Wstęp teoretyczny}
+Fala podłużna w~pręcie powstaje na skutek chwilowego wychylenia się
+fragmentu pręta z~położenia równowagi i~następujących po nim drgań.
+Drgania te, dzięki sprężystości ośrodka, mogą być przekazywane dalej i~mogą
+rozchodzić się po całym ośrodku. Szybkość rozchodzenia się fali zależy
+od bezwładności i~sprężystości ośrodka, w~którym się rozchodzi.
+Aby znaleźć związek pomiędzy modułem Younga a~prędkością rozchodzenia
+fali rozważmy mały wycinek jednorodnego pręta o~grubości $\delta x$ jak na~\figref{fig:fala1}.
+
+\addplot[c]
+{Wycinek pręta pomiędzy $x$ i~$x+\Delta{x}$.
+Kierunek osi $X$ zgodny z~kierunkiem propagacji fali}
+{fala1}{inne/rys1.png}{0.5\textwidth}
+
+
+Rozpatrując naprężenie $\sigma$ w~punkcie $x$ oraz $x$+$\Delta{x}$ na rysunku, a~także oznaczając średnie przemieszczenie wycinka pręta jako $\Psi(x,t)$ można zapisać równanie ruchu w~postaci
+%
+\begin{equation}
+\label{eq:napr}
+\rho S \Delta{x}\frac{\partial^2\Psi(x,t)}{\partial t^2} = S(\sigma(x+\Delta{x})-\sigma(x))
+\end{equation}
+%
+Gdzie $\rho$ oznacza średnią gęstość, $S$ pole powierzchni przekroju, a~$\sigma$
+naprężenie materiału.
+\pagebreak
+
+Przekształcając równanie (\ref{eq:napr}) (skrócenie $S$ po obu stronach równania,
+podzielenie obu stron przez $\Delta{x}$ i~obliczenie granicy przy $\Delta{x}\rightarrow0$) Prawy człon stał się granicą ilorazu różnicowego:
+\begin{equation*}
+    \rho\frac{\partial^2\Psi(x,t)}{\partial t^2} = \frac{\partial\sigma}{\partial x}
+\end{equation*}
+%
+Po zastosowaniu prawa Hooka i~zapisując odkształcenie względne jako pochodna funkcji $\Psi$ po $x$ otrzymaliśmy równanie:
+\begin{equation*}
+    \frac{\partial^2\Psi(x,t)}{\partial t^2} = \frac{E}{\rho}\frac{\partial^2\Psi(x,t)}{\partial x^2}
+\end{equation*}
+%
+z którego widać, że prędkość rozchodzenia się fali w~pręcie wynosi:
+\begin{equation*}
+    v = \sqrt{\frac{E}{\rho}}
+\end{equation*}
+%
+a co za tym idzie, moduł Younga jest równy \[E = \rho v^2\]
+
+Fala padająca i~fala odbita w~pręcie, interferują ze sobą tworząc falę stojącą.
+Odległość między węzłami fali stojącej stanowi połowę jej długości.Korzystając z~tego fakty równanie na prędkość ostatecznie
+otrzymaliśmy jako:
+\begin{equation*}
+    v = 2 lf
+\end{equation*}
+%
+Co prowadzi to do wyrażenia na moduł Younga w~postaci:
+\begin{equation}
+    E = 4\rho l^2 f^2
+    \label{eq:S4YoungMod}
+\end{equation}
+%
+Opracowane przez nas zagadnienia kontrolne to tego doświadczenia zostały dołączone na osobnych,zapisanych ręcznie kartkach.
+\newpage %tutaj zszyjemy te nasze kartki ręczne OK
+\addtocounter{page}{2}%żeby nasze kartki były zawarte w numeracji
+
+\section{Układ pomiarowy}
+\begin{enumerate}
+		\item Komputer stacjonarny Dell z~systemem Windows XP z~podpiętym mikrofonem i~zainstalowanym oprogramowaniem Zelscope.
+		\item Zestaw siedmiu prętów o~różnych kształtach i materiałach.
+		\item Młotek.
+		\item Przyrządy miernicze suwmiarka, miarka w~rolce o~podziałce 1mm oraz waga Detecto o~dokładności 1g.
+\end{enumerate}
+	
+\section{Wykonanie ćwiczenia}
+\begin{enumerate}
+    \item Pomiar prętów z~miedzi,stali i~aluminium (długość) oraz odpowiadających im próbek (długość,średnica) za pomocą suwmiarki o~niepewności pomiarowej $0.05$mm oraz miarki w~rolce o~podziałce $1$mm.
+    \item Zważanie próbek odpowiadających badanym prętom za pomocą wagi w~laboratorium o~dokładności $1$g, w~celu wyznaczenia gęstości materiałów z~których zrobione są pręty.
+    \item Uderzenie młotkiem w~pręt, a~następnie zarejestrowanie częstotliwości drgań harmonicznych przy pomocy mikrofonu i~programu Zelscope.
+    \item Powtórzenie czynności z~punktu 3 dla wszystkich badanych prętów.
+\end{enumerate}
+
+\section{Wyniki pomiarów}
+
+Mimo tego, że wykonaliśmy ćwiczenie dla sześciu prętów, to niestety tylko trzy serie pobranych pomiarów nadawały się do przeanalizowania. Wynika to z~braku możliwości odczytania częstotliwości drgania fal harmonicznych dla takich materiałów jak np. aluminium podczas tego doświadczenia.
+Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich opracowanie zawiera jedynie informacje dotyczące pręta stalowego (o~kształcie prostopadłościennym i~okrągłym) oraz pręta miedzianego i~odpowiadających im próbek.
+
+% 	 \multirow{3}{*}{Materiał} & \begin{tabular}{c}  \\ \mbox{[mm]}  \end{tabular}  &  \begin{tabular}{c} \\ \mbox{[g]}\end{tabular} & \begin{tabular}{c} Długość próbki  \\ \mbox{[mm]}  \end{tabular}  & 
+% 			\begin{tabular}{c}	Objętość\\ \mbox{[$cm^3$]}  \end{tabular} & 
+% 			\begin{tabular}{c}	Gęstość \\ $ \left [\frac{kg}{m^3} \right ] $ \end{tabular}  \\
+
+    \begin{table}[htb]
+        \newlength{\CW}
+        \setlength{\CW}{4.0cm}
+		\centering
+		\caption{Pomiary próbek materiałów}
+		\label{tab:mat}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+		    \multirow[c]{3}{0.6\CW}{Materiał}&
+		    \multirow[b]{3}{0.8\CW}{{ Wymiary podstawy\\ (wartość średnia)}\\$[mm]$}&
+		    \multirow[b]{3}{0.3\CW}{Masa próbki\\ $[g]$ }&
+		    \multirow[b]{3}{0.3\CW}{Długość próbki\\$[mm]$ }&
+		    \multirow[b]{3}{0.3\CW}{Objętość\\ $[mm]$}&
+		    \multirow[b]{3}{0.3\CW}{Gęstość\\
+		    $\left[ \frac{kg}{m^3} \right]$}\\
+		    &&&&&\\&&&&&\\&&&&&\\
+			\hline
+			
+			Miedź (okrągła)&
+			$d=5.00$& 
+			66& 
+			386&
+			???& 
+			???\\
+			\hline
+			
+			\multirow{2}{*}{Stal (prostopad.) }&
+			$a=4.77$&
+			\multirow{2}{*}{36}&
+			\multirow{2}{*}{312}&
+			\multirow{2}{*}{???}&
+			\multirow{2}{*}{???}\\
+			&$b=4.77$&&&&\\
+			\hline
+				
+		\end{tabular}
+	\end{table}
+	\vfill
+	\pagebreak
+    \begin{table}[htb]
+			\centering
+			\caption{Nr pręta 1 (miedź)}
+			\label{tab:prt1}
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-1}
+				$l = 1802 mm$ & \multicolumn{3}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[Hz]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 1030.30 & 3604.00 & ? \\
+				\hline
+				2 & 2060.61 & 1802.00 & ? \\
+				\hline
+				3 & 3090.91 & 1201.33 & ? \\
+				\hline
+				4 & 4121.21 &  901.00 & ? \\
+				\hline
+				5 & 5151.52 &  720.80 & ? \\
+				\hline
+				6 & 6181.82 &  600.67 & ? \\
+				\hline
+				7 & 7212.12 &  514.86 & ? \\
+				\hline
+			\end{tabular}
+	\end{table}
+	\begin{table}[htb]
+			\centering
+			\caption{Nr pręta 2 (stal okrągła)}
+			\label{tab:prt2}
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-1}
+				$l = 1801 mm$ & \multicolumn{3}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[Hz]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 1394.94 & 3602.00 & ? \\
+				\hline
+				2 & 2878.79 & 1801.00 & ? \\
+				\hline
+				3 & 4303.03 & 1200.67 & ? \\
+				\hline
+				4 & 5696.97 & 900.5 & ? \\
+				\hline
+				5 & 7212.12 & 900.5 & ? \\
+				\hline
+				
+			\end{tabular}
+	
+	\end{table}
+	\begin{table}[htb]
+		\centering
+		\caption{Nr pręta 3 (stal prostpadł.)}
+		\label{tab:prt3}
+		\begin{tabular}{|c|c|c|c|}
+			\cline{1-1}
+			$l = 1803 mm$ & \multicolumn{3}{c}{}\\
+			\hline
+			\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[Hz]}  \end{tabular}  & 
+			\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+			\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+			\hline
+			1 & 1393.94 & 3606.0 & ? \\
+			\hline
+			2 & 3878.79 & 1803.0 & ? \\
+			\hline
+			3 & 4303.03 & 1202.00 & ? \\
+			\hline
+			4 & 5696.97 & 901.50 & ? \\
+			\hline
+		\end{tabular}
+	\end{table}
+	\vfill
+    \pagebreak
+
 \end{document}
