@@ -103,6 +103,7 @@
 \renewcommand{\maketitle}{
   \begingroup
     \newpage
+    \small
     \begin{center}
     \bgroup
         \def\arraystretch{1.5}
@@ -126,7 +127,7 @@
     \end{center}
     \medskip
     \textbf{\large Cel ćwiczenia:\\}
-    { \smallskip\hspace*{0.05\textwidth} \parbox[t]{0.9\textwidth}{\@target}}
+    {\smallskip\hspace*{0.05\textwidth} \parbox[t]{0.9\textwidth}{\@target}}
 
   \endgroup
   

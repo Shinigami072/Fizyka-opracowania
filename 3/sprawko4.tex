@@ -11,90 +11,86 @@ Wyznaczenie modułu Younga dla różnych materiałów na podstawie pomiaru pręd
 \maketitle
 
 \section{Wstęp teoretyczny}
-Fala podłużna w~pręcie powstaje na skutek chwilowego wychylenia się
-fragmentu pręta z~położenia równowagi i~następujących po nim drgań.
-Drgania te, dzięki sprężystości ośrodka, mogą być przekazywane dalej i~mogą
-rozchodzić się po całym ośrodku. Szybkość rozchodzenia się fali zależy
-od bezwładności i~sprężystości ośrodka, w~którym się rozchodzi.
-Aby znaleźć związek pomiędzy modułem Younga a~prędkością rozchodzenia
-fali rozważmy mały wycinek jednorodnego pręta o~grubości $\delta x$ jak na~\figref{fig:fala1}.
+    Fala podłużna w~pręcie powstaje na skutek chwilowego wychylenia się
+    fragmentu pręta z~położenia równowagi i~następujących po nim drgań.
+    Drgania te, dzięki sprężystości ośrodka, mogą być przekazywane dalej i~mogą
+    rozchodzić się po całym ośrodku. Szybkość rozchodzenia się fali zależy
+    od bezwładności i~sprężystości ośrodka, w~którym się rozchodzi.
+    Aby znaleźć związek pomiędzy modułem Younga a~prędkością rozchodzenia
+    fali rozważmy mały wycinek jednorodnego pręta o~grubości $\delta x$ jak na~\figref{fig:fala1}.
+    
+    \addplot[c]
+    {Wycinek pręta pomiędzy $x$ i~$x+\Delta{x}$.
+    Kierunek osi $X$ zgodny z~kierunkiem propagacji fali}
+    {fala1}{inne/rys1.png}{0.5\textwidth}
+    
+    
+    Rozpatrując naprężenie $\sigma$ w~punkcie $x$ oraz $x$+$\Delta{x}$ na rysunku, a~także oznaczając średnie przemieszczenie wycinka pręta jako $\Psi(x,t)$ można zapisać równanie ruchu w~postaci
+    %
+    \begin{equation}
+    \label{eq:napr}
+    \rho S \Delta{x}\frac{\partial^2\Psi(x,t)}{\partial t^2} = S(\sigma(x+\Delta{x})-\sigma(x))
+    \end{equation}
+    %
+    Gdzie $\rho$ oznacza średnią gęstość, $S$ pole powierzchni przekroju, a~$\sigma$
+    naprężenie materiału.
+    \pagebreak
+    
+    Przekształcając równanie (\ref{eq:napr}) (skrócenie $S$ po obu stronach równania,
+    podzielenie obu stron przez $\Delta{x}$ i~obliczenie granicy przy $\Delta{x}\rightarrow0$) Prawy człon stał się granicą ilorazu różnicowego:
+    \begin{equation*}
+        \rho\frac{\partial^2\Psi(x,t)}{\partial t^2} = \frac{\partial\sigma}{\partial x}
+    \end{equation*}
+    %
+    Po zastosowaniu prawa Hooka i~zapisując odkształcenie względne jako pochodna funkcji $\Psi$ po $x$ otrzymaliśmy równanie:
+    \begin{equation*}
+        \frac{\partial^2\Psi(x,t)}{\partial t^2} = \frac{E}{\rho}\frac{\partial^2\Psi(x,t)}{\partial x^2}
+    \end{equation*}
+%
+    z którego widać, że prędkość rozchodzenia się fali w~pręcie wynosi:
+    \begin{equation*}
+        v = \sqrt{\frac{E}{\rho}}
+    \end{equation*}
+%
+    a co za tym idzie, moduł Younga jest równy \[E = \rho v^2\]
 
-\addplot[c]
-{Wycinek pręta pomiędzy $x$ i~$x+\Delta{x}$.
-Kierunek osi $X$ zgodny z~kierunkiem propagacji fali}
-{fala1}{inne/rys1.png}{0.5\textwidth}
-
-
-Rozpatrując naprężenie $\sigma$ w~punkcie $x$ oraz $x$+$\Delta{x}$ na rysunku, a~także oznaczając średnie przemieszczenie wycinka pręta jako $\Psi(x,t)$ można zapisać równanie ruchu w~postaci
+    Fala padająca i~fala odbita w~pręcie, interferują ze sobą tworząc falę stojącą.
+    Odległość między węzłami fali stojącej stanowi połowę jej długości.Korzystając z~tego fakty równanie na prędkość ostatecznie
+    otrzymaliśmy jako:
+    \begin{equation*}
+        v = 2 lf
+    \end{equation*}
 %
-\begin{equation}
-\label{eq:napr}
-\rho S \Delta{x}\frac{\partial^2\Psi(x,t)}{\partial t^2} = S(\sigma(x+\Delta{x})-\sigma(x))
-\end{equation}
+    Co prowadzi to do wyrażenia na moduł Younga w~postaci:
+    \begin{equation}
+        E = 4\rho l^2 f^2
+        \label{eq:S4YoungMod}
+    \end{equation}
 %
-Gdzie $\rho$ oznacza średnią gęstość, $S$ pole powierzchni przekroju, a~$\sigma$
-naprężenie materiału.
-\pagebreak
-
-Przekształcając równanie (\ref{eq:napr}) (skrócenie $S$ po obu stronach równania,
-podzielenie obu stron przez $\Delta{x}$ i~obliczenie granicy przy $\Delta{x}\rightarrow0$) Prawy człon stał się granicą ilorazu różnicowego:
-\begin{equation*}
-    \rho\frac{\partial^2\Psi(x,t)}{\partial t^2} = \frac{\partial\sigma}{\partial x}
-\end{equation*}
-%
-Po zastosowaniu prawa Hooka i~zapisując odkształcenie względne jako pochodna funkcji $\Psi$ po $x$ otrzymaliśmy równanie:
-\begin{equation*}
-    \frac{\partial^2\Psi(x,t)}{\partial t^2} = \frac{E}{\rho}\frac{\partial^2\Psi(x,t)}{\partial x^2}
-\end{equation*}
-%
-z którego widać, że prędkość rozchodzenia się fali w~pręcie wynosi:
-\begin{equation*}
-    v = \sqrt{\frac{E}{\rho}}
-\end{equation*}
-%
-a co za tym idzie, moduł Younga jest równy \[E = \rho v^2\]
-
-Fala padająca i~fala odbita w~pręcie, interferują ze sobą tworząc falę stojącą.
-Odległość między węzłami fali stojącej stanowi połowę jej długości.Korzystając z~tego fakty równanie na prędkość ostatecznie
-otrzymaliśmy jako:
-\begin{equation*}
-    v = 2 lf
-\end{equation*}
-%
-Co prowadzi to do wyrażenia na moduł Younga w~postaci:
-\begin{equation}
-    E = 4\rho l^2 f^2
-    \label{eq:S4YoungMod}
-\end{equation}
-%
-Opracowane przez nas zagadnienia kontrolne to tego doświadczenia zostały dołączone na osobnych,zapisanych ręcznie kartkach.
+    Opracowane przez nas zagadnienia kontrolne do tego doświadczenia zostały dołączone na osobnych,zapisanych ręcznie kartkach.
 \newpage %tutaj zszyjemy te nasze kartki ręczne OK
 \addtocounter{page}{2}%żeby nasze kartki były zawarte w numeracji
 
 \section{Układ pomiarowy}
-\begin{enumerate}
-		\item Komputer stacjonarny Dell z~systemem Windows XP z~podpiętym mikrofonem i~zainstalowanym oprogramowaniem Zelscope.
-		\item Zestaw siedmiu prętów o~różnych kształtach i materiałach.
-		\item Młotek.
-		\item Przyrządy miernicze suwmiarka, miarka w~rolce o~podziałce 1mm oraz waga Detecto o~dokładności 1g.
-\end{enumerate}
-	
+    \begin{enumerate}
+    		\item Komputer stacjonarny Dell z~systemem Windows XP z~podpiętym mikrofonem i~zainstalowanym oprogramowaniem Zelscope.
+    		\item Zestaw siedmiu prętów o~różnych kształtach i ~materiałach.
+    		\item Młotek.
+    		\item Przyrządy miernicze suwmiarka, miarka w~rolce o~podziałce 1mm oraz waga Detecto o~dokładności 1g.
+    \end{enumerate}
+    	
 \section{Wykonanie ćwiczenia}
-\begin{enumerate}
-    \item Pomiar prętów z~miedzi,stali i~aluminium (długość) oraz odpowiadających im próbek (długość,średnica) za pomocą suwmiarki o~niepewności pomiarowej $0.05$mm oraz miarki w~rolce o~podziałce $1$mm.
-    \item Zważanie próbek odpowiadających badanym prętom za pomocą wagi w~laboratorium o~dokładności $1$g, w~celu wyznaczenia gęstości materiałów z~których zrobione są pręty.
-    \item Uderzenie młotkiem w~pręt, a~następnie zarejestrowanie częstotliwości drgań harmonicznych przy pomocy mikrofonu i~programu Zelscope.
-    \item Powtórzenie czynności z~punktu 3 dla wszystkich badanych prętów.
-\end{enumerate}
+    \begin{enumerate}
+        \item Pomiar prętów z~miedzi,stali i~aluminium (długość) oraz odpowiadających im próbek (długość,średnica) za pomocą suwmiarki o~niepewności pomiarowej $0.05$mm oraz miarki w~rolce o~podziałce $1$mm.
+        \item Zważanie próbek odpowiadających badanym prętom za pomocą wagi w~laboratorium o~dokładności $1$g, w~celu wyznaczenia gęstości materiałów z~których zrobione są pręty.
+        \item Uderzenie młotkiem w~pręt, a~następnie zarejestrowanie częstotliwości drgań harmonicznych przy pomocy mikrofonu i~programu Zelscope.
+        \item Powtórzenie czynności z~punktu 3 dla wszystkich badanych prętów.
+    \end{enumerate}
 
 \section{Wyniki pomiarów}
 
-Mimo tego, że wykonaliśmy ćwiczenie dla sześciu prętów, to niestety tylko trzy serie pobranych pomiarów nadawały się do przeanalizowania. Wynika to z~braku możliwości odczytania częstotliwości drgania fal harmonicznych dla takich materiałów jak np. aluminium podczas tego doświadczenia.
-Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich opracowanie zawiera jedynie informacje dotyczące pręta stalowego (o~kształcie prostopadłościennym i~okrągłym) oraz pręta miedzianego i~odpowiadających im próbek.
-
-% 	 \multirow{3}{*}{Materiał} & \begin{tabular}{c}  \\ \mbox{[mm]}  \end{tabular}  &  \begin{tabular}{c} \\ \mbox{[g]}\end{tabular} & \begin{tabular}{c} Długość próbki  \\ \mbox{[mm]}  \end{tabular}  & 
-% 			\begin{tabular}{c}	Objętość\\ \mbox{[$cm^3$]}  \end{tabular} & 
-% 			\begin{tabular}{c}	Gęstość \\ $ \left [\frac{kg}{m^3} \right ] $ \end{tabular}  \\
+    Mimo tego, że wykonaliśmy ćwiczenie dla~sześciu prętów, to niestety tylko trzy serie pobranych pomiarów nadawały się do przeanalizowania. Wynika to z~braku możliwości odczytania częstotliwości drgań fal~harmonicznych~dla takich materiałów jak np.~aluminium podczas tego doświadczenia.
+    Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich~opracowanie zawiera jedynie informacje dotyczące pręta stalowego (o~kształcie prostopadłościennym i~okrągłym) oraz pręta miedzianego i~odpowiadających im~próbek.
 
     \begin{table}[htb]
         \newlength{\CW}
@@ -108,7 +104,7 @@ Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich opracowanie zaw
 		    \multirow[b]{3}{0.8\CW}{{ Wymiary podstawy\\ (wartość średnia)}\\$[mm]$}&
 		    \multirow[b]{3}{0.3\CW}{Masa próbki\\ $[g]$ }&
 		    \multirow[b]{3}{0.3\CW}{Długość próbki\\$[mm]$ }&
-		    \multirow[b]{3}{0.3\CW}{Objętość\\ $[mm]$}&
+		    \multirow[b]{3}{0.3\CW}{Objętość\\ $[cm^3]$}&
 		    \multirow[b]{3}{0.3\CW}{Gęstość\\
 		    $\left[ \frac{kg}{m^3} \right]$}\\
 		    &&&&&\\&&&&&\\&&&&&\\
@@ -118,23 +114,27 @@ Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich opracowanie zaw
 			$d=5.00$& 
 			66& 
 			386&
-			???& 
-			???\\
+			\num{7.58}&%7.579092276785376e-06 m^3
+			\num{10773.57}\\%10773.565378528301
 			\hline
 			
-			\multirow{2}{*}{Stal (prostopad.) }&
+			\multirow{2}{*}{Stal (prostopadł.) }&
 			$a=4.77$&
 			\multirow{2}{*}{36}&
 			\multirow{2}{*}{312}&
-			\multirow{2}{*}{???}&
-			\multirow{2}{*}{???}\\
+			\multirow{2}{*}{\num{7.10}}&%7.0989048e-06 m^3
+			\multirow{2}{*}{~~\num{5071.20}}\\%5071.204786405925
 			&$b=4.77$&&&&\\
 			\hline
 				
 		\end{tabular}
 	\end{table}
+	
+	Następnie korzystając z~równania~(\ref{eq:S4YoungMod}) obliczyliśmy wartości modułu Younga dla~testowanych\\ materiałów. 
+
 	\vfill
 	\pagebreak
+	\subsection{Tablice Wyników}
     \begin{table}[htb]
 			\centering
 			\caption{Nr pręta 1 (miedź)}
@@ -144,25 +144,31 @@ Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich opracowanie zaw
 				$l = 1802 mm$ & \multicolumn{3}{c}{}\\
 				\hline
 				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[Hz]}  \end{tabular}  & 
-				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[mm]}  \end{tabular} &
 				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
 				\hline
-				1 & 1030.30 & 3606.00 & ? \\
+				1 & 1030.30 & 3606.00 & 3713.20 \\%3713.2012
 				\hline
-				2 & 2060.61 & 1802.00 & ? \\
+				2 & 2060.61 & 1802.00 & 3713.22 \\%3713.21922
 				\hline
-				3 & 3090.91 & 1201.33 & ? \\
+				3 & 3090.91 & 1201.33 & 3713.21 \\%3713.21321333333
 				\hline
-				4 & 4121.21 &  901.00 & ? \\
+				4 & 4121.21 & ~901.00 & 3713.21 \\%3713.21021
 				\hline
-				5 & 5151.52 &  720.80 & ? \\
+				5 & 5151.52 & ~720.80 & 3713.22 \\%3713.215616
 				\hline
-				6 & 6181.82 &  600.67 & ? \\
+				6 & 6181.82 & ~600.67 & 3713.21 \\%3713.21321333333
 				\hline
-				7 & 7212.12 &  514.86 & ? \\
+				7 & 7212.12 & ~514.86 & 3713.21 \\%3713.21149714286
 				\hline
+			    \multicolumn{3}{|r|}{Prędkość średnia { $\bar{\upsilon}$}: }& 3713.21 \\%3713.212
+				\hline
+				\multicolumn{3}{|r|}{Moduł Younga { $E$ $[GPa]$}: }& ~~\num{148.55} \\%148.545311132
+				\hline
+
 			\end{tabular}
 	\end{table}
+	\vfill
 	\begin{table}[htb]
 			\centering
 			\caption{Nr pręta 2 (stal okrągła)}
@@ -172,46 +178,155 @@ Z~tego względu poniższe wyniki pomiarowe oraz późniejsze ich opracowanie zaw
 				$l = 1801 mm$ & \multicolumn{3}{c}{}\\
 				\hline
 				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[Hz]}  \end{tabular}  & 
-				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[mm]}  \end{tabular} &
 				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
 				\hline
-				1 & 1394.94 & 3602.00 & ? \\
+				1 & 1394.94 & 3602.00 & 5024.57 \\%5024.57388
 				\hline
-				2 & 2878.79 & 1801.00 & ? \\
+				2 & 2878.79 & 1801.00 & 5184.70 \\%5184.70079
 				\hline
-				3 & 4303.03 & 1200.67 & ? \\
+				3 & 4303.03 & 1200.67 & 5166.50 \\%5166.50468666667
 				\hline
-				4 & 5696.97 & 900.5 & ? \\
+				4 & 5696.97 & ~900.50 & 5130.12 \\%5130.121485
 				\hline
-				5 & 7212.12 & 900.5 & ? \\
+				5 & 7212.12 & ~720.40 & 5195.61 \\%5195.611248
 				\hline
-				
+				\multicolumn{3}{|r|}{Prędkość średnia { $\bar{\upsilon}$}: }& 5140.30 \\%5140.302
+				\hline
+				\multicolumn{3}{|r|}{Moduł Younga { $E$ $[GPa]$}: }& ~~\num{134.00} \\%133.995
+				\hline
 			\end{tabular}
 	
 	\end{table}
+	\vfill
 	\begin{table}[htb]
 		\centering
-		\caption{Nr pręta 3 (stal prostpadł.)}
+		\caption{Nr pręta 3 (stal prostopadłościenna)}
 		\label{tab:prt3}
 		\begin{tabular}{|c|c|c|c|}
 			\cline{1-1}
 			$l = 1803 mm$ & \multicolumn{3}{c}{}\\
 			\hline
 			\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[Hz]}  \end{tabular}  & 
-			\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+			\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[mm]}  \end{tabular} &
 			\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
 			\hline
-			1 & 1393.94 & 3606.0 & ? \\
+			1 & 1393.94 & 3606.00 & 5026.55 \\%5026.54764
 			\hline
-			2 & 3878.79 & 1803.0 & ? \\
+			2 & 3878.79 & 1803.00 & 6993.46 \\%6993.45837
 			\hline
-			3 & 4303.03 & 1202.00 & ? \\
+			3 & 4303.03 & 1202.00 & 5172.24 \\%5172.24206
 			\hline
-			4 & 5696.97 & 901.50 & ? \\
+			4 & 5696.97 & ~901.50 & 5135.82 \\%5135.818455
+			\hline
+			\multicolumn{3}{|r|}{Prędkość średnia { $\bar{\upsilon}$}: }& 5582.02 \\%5582.017
+			\hline
+			\multicolumn{3}{|r|}{Moduł Younga { $E$ $[GPa]$}: }& ~~\num{158.01} \\%158.013211866
 			\hline
 		\end{tabular}
 	\end{table}
 	\vfill
     \pagebreak
+    \newpage %tutaj zszyjemy te nasze kartki ręczne z pomiarami? tak myślę że to dobre miejsce na kartki z naszymi pomiarami ;)
+    \addtocounter{page}{2}%żeby nasze kartki były zawarte w
+\subsection{Niepewności pomiarowe}
+Do obliczeń przyjęliśmy następujące niepewności:
+\begin{enumerate}
+    \item niepewność długości pręta $u(l)=1 mm$
+    \item niepewność długości promienia $u(r)=0.05 mm$
+    \item niepewność masy próbek $u(m)=1 g$
+    \item niepewność częstotliwości drgań $u(f)=120 Hz$
+    \item niepewność długości fali $u(\lambda)=2 mm$
 
+\end{enumerate}
+
+Zastosowane wzory:
+\begin{enumerate}
+    \item Wzór na niepewność gęstości:\\
+    \begin{align*}
+    \small
+    u(\rho)&=\sqrt{\left(\frac{\partial \rho}{\partial m}u(m)\right)^2+\left(\frac{\partial \rho}{\partial l}u(l)\right)^2+\left(\frac{\partial \rho}{\partial r}u(r)\right)^2}=\\ &= \sqrt{\left(\frac{1}{l\Pi r^2}u(m)\right)^2+\left(\frac{-m}{l^2 \Pi r^2}u(l)\right)^2+\left(\frac{-2m}{l\Pi r^3}u(r)\right)^2}
+    \end{align*}\\
+    \begin{align*}
+    \small
+    u(\rho)&=\sqrt{\left(\frac{
+    \partial \rho}
+    {\partial m}u(m)\right)^2+
+    \left(\frac{\partial \rho}
+    {\partial l}u(l)\right)^2+
+    \left(\frac{\partial \rho
+    }{\partial a}u(a)\right)^2+
+    \left(\frac{\partial \rho
+    }{\partial b}u(b)\right)^2}=\\&=
+    %
+    \sqrt{\left(\frac{
+    1}
+    {lab}u(m)\right)^2+
+    \left(\frac{-m}
+    {l^2ab}u(l)\right)^2+
+    \left(\frac{-m
+    }{la^2b}u(a)\right)^2+
+    \left(\frac{-m
+    }{lab^2}u(b)\right)^2}
+    \end{align*}
+    \item Wzór na niepewność prędkości fali:\\
+    \[\small u(v)=\sqrt{\left(\frac{\partial v}{\partial f}u(f)\right)^2+\left(\frac{\partial v}{\partial \lambda}u(\lambda)\right)^2}=\sqrt{\left(\lambda u(f)\right)^2+\left(f u(\lambda)\right)^2}\]
+	
+	\item Wzór na niepewność Modułu Younga:\\
+	\[\small u(E)=\sqrt{\left(\frac{\partial E}{\partial \rho}u(\rho)\right)^2+\left(\frac{\partial E}{\partial v}u(v)\right)^2} =
+	\sqrt{\left(v^2 u(\rho)\right)^2+\left(2 \rho v u(v)\right)^2}\]
+\end{enumerate}
+
+\subsubsection{Wyniki dla~pręta miedzianego}
+\begin{align*}
+\small
+ u(\rho)&=33.75 kg/m^3\\%33.74625
+ u(v)&= 160.45 m/s\\
+u(E)&= 19.33 GPa%7.227812
+\end{align*}
+
+\subsubsection{Wyniki dla pręta stalowego}
+ \[\small u(\rho)= 459.67 kg/m^3\]%459.6731
+ a) okrągłego\\
+ \begin{align*}
+ \small
+ u(v)&=  472.87 m/s\\
+u(E)&= 27.49 GPa\\%6.311946 
+\end{align*}
+b) prostopadłościennego\\
+\begin{align*}
+\small
+ u(v)&= 225.51 m/s\\
+u(E)&= 19.19 GPa\\%7.127572WTF tu ciągle mi wychodzi co innego-  w zależności od tego czy python czy R
+\end{align*}
+
+\subsection{Porównanie wyników}
+\begin{table}[htb]
+\caption{Porównanie wyników z wartościami tablicowymi}
+\begin{tabular}{|l|l|l|l|}
+\hline
+Materiał         & Wyliczony moduł Younga & Niepewność rozszerzona k=2 & \begin{tabular}[c]{@{}l@{}}Wartość tablicowa\\ modułu Younga\end{tabular} \\ \hline
+miedź            & 148.55 & 38.66 & 110-135
+\\\hline
+stal okrągła     & 134.00 & 54.98 & 205-210
+\\\hline
+stal prostopadł. & 158.01 & 38.38 & 205-210
+\\\hline
+\end{tabular}
+\end{table}
+
+	
+\section{Wnioski}
+    Wyliczone przez nas~wartości modułu Younga dla~miedzi są w~granicach niepewności rozszerzonej zgodne z~wartościami~tablicowymi.
+
+    Natomiast wyliczone przez~nas wartości modułu Younga dla drutów stalowych nie są w~granicach niepewności rozszerzonej zgodne z~wartościami~tablicowymi.
+    
+    Biorąc pod~uwagę wartości uzyskane podczas pomiarów  w~\tabref{tab:prt2} i~\tabref{tab:prt3}, przyczynami rozbieżności między obliczonymi przez nas~wynikami, a~wartościami oczekiwanymi mogą być:
+    \begin{itemize}
+        \item błąd w~odczytywaniu wartości częstotliwości dla ~kolejnych Harmonicznych
+        \item brak "`wyczucia"' przy~uderzaniu pręta 
+        \item brak interferencji z~innymi falami
+        \item ogólny stan prętów, zakłócenia z~otoczenia
+    \end{itemize}
+    
 \end{document}
