@@ -21,7 +21,9 @@
 \ProvidesClass{fizraport}[Provides AGH physics lab raport class v1.0]
 
 \LoadClass[a4paper,10pt,twoside]{article}
-
+%(\s|~)(a|i|o|u|w|z|-|do|ta|to|je|aż|po|na|za|do|go|od|ze|\$.\$|ten|się|lub|nie|tak|ich|jest|jako|przy|jego|ją)\s
+%$1$2~
+%usefull regex for typography
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
